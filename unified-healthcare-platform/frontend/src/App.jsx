@@ -24,7 +24,7 @@ import './App.css'
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
-  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768)
 
   if (!loggedIn) {
     return (
@@ -153,8 +153,20 @@ function App() {
           </div>
         </aside>
 
+        {/* Mobile Backdrop */}
+        <div 
+          className={`mobile-backdrop ${sidebarOpen ? 'open' : ''}`}
+          onClick={() => setSidebarOpen(false)}
+        />
+
         {/* Main Content */}
         <main className="main-content">
+          <div className="mobile-header">
+            <button className="mobile-menu-btn" onClick={() => setSidebarOpen(true)}>
+              <Menu size={24} />
+            </button>
+            <h2>HealthAI Pro</h2>
+          </div>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/radiology" element={<RadiologyHub />} />
