@@ -1,0 +1,13 @@
+{
+  "name": "healthcare-mvp",
+  "version": "1.0.0",
+  "description": "Healthcare MVP workspace — unified platform retained",
+  "scripts": {
+    "start:unified": "cd unified-healthcare-platform && docker-compose up -d",
+    "frontend:unified": "cd unified-healthcare-platform/frontend && npm install && npm run dev",
+    "backend:unified": "cd unified-healthcare-platform/backend && python -m pip install -r requirements.txt && python -m uvicorn main:app --reload --port 8000"
+  },
+  "keywords": ["healthcare", "unified", "platform"],
+  "author": "",
+  "license": "MIT"
+}

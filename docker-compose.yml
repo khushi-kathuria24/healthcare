@@ -1,0 +1,14 @@
+"""
+This repository originally included the RIS AI platform compose configuration.
+The RIS AI platform has been removed from the active workspace. The
+unified-healthcare-platform is kept under `unified-healthcare-platform/`.
+
+To start the unified platform services, run from the repository root:
+
+    docker-compose -f unified-healthcare-platform/docker-compose.yml up -d
+
+Or use the npm script:
+
+    npm run start:unified
+
+"""
