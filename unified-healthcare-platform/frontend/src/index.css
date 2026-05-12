@@ -111,7 +111,35 @@ body {
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
+}
+}
+
+/* ===== GLOBAL RESPONSIVE OVERRIDES FOR INLINE STYLES ===== */
+@media (max-width: 768px) {
+  /* Reduce padding on the main wrapper of every page */
+  .main-content > div:not(.mobile-header):not(.mobile-backdrop) {
+    padding: 16px !important;
+  }
+
+  /* Force all multi-column inline grids to stack vertically */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix flexbox spacing issues on mobile */
+  [style*="justify-content: space-between"] {
+    flex-wrap: wrap;
+    gap: 16px !important;
+  }
+  
+  /* Fix typography scaling */
+  h1[style*="font-size: 32px"] {
+    font-size: 24px !important;
+  }
+  
+  /* Make sure images in modals/cards don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
